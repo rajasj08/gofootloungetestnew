@@ -1,0 +1,181 @@
+User-agent: Adsbot-Google
+Disallow: / 
+
+
+User-agent: Alexabot
+Disallow: / 
+
+
+User-agent: Applebot
+Disallow: / 
+
+
+User-agent: Architextspider
+Disallow: / 
+
+
+User-agent: Baiduspider
+Disallow: / 
+
+
+User-agent: Bender
+Disallow: / 
+
+
+User-agent: Bingbot
+Disallow: / 
+
+
+User-agent: Birubot
+Disallow: / 
+
+
+User-agent: BlogPulseLive
+Disallow: / 
+
+
+User-agent: Coccoc
+Disallow: / 
+
+
+User-agent: Daumoa
+Disallow: / 
+ 
+
+User-agent: Duckduckbot
+Disallow: / 
+
+
+User-agent: Fast
+Disallow: / 
+
+
+User-agent: Feedfetcher-Google
+Disallow: / 
+
+
+User-agent: Googlebot
+Disallow: / 
+
+
+User-agent: Googlebot-Image
+Disallow: / 
+
+
+User-agent: Googlebot-Mobile
+Disallow: / 
+
+
+User-agent: Googlebot-News
+Disallow: / 
+
+
+User-agent: Googlebot-Video
+Disallow: / 
+
+
+User-agent: Gulliver
+Disallow: / 
+
+
+User-agent: Ia_Archiver
+Disallow: / 
+
+
+User-agent: iisbot
+Disallow: / 
+
+
+User-agent: Jikespider
+Disallow: / 
+
+
+User-agent: Lycos_Spider_(T-Rex)
+Disallow: / 
+
+
+User-agent: Mail.Ru_Bot
+Disallow: / 
+
+
+User-agent: Mediapartners-Google
+Disallow: / 
+
+
+User-agent: Msnbot
+Disallow: / 
+
+
+User-agent: Msnbot-Media
+Disallow: / 
+
+
+User-agent: Msnptc
+Disallow: / 
+
+
+User-agent: Naverbot
+Disallow: / 
+
+
+User-agent: Nutch
+Disallow: / 
+
+
+User-agent: Quickobot
+Disallow: / 
+
+
+User-agent: Rogerbot
+Disallow: / 
+
+
+User-agent: Scooter
+Disallow: / 
+
+
+User-agent: Seznambot
+Disallow: / 
+
+
+User-agent: Slurp
+Disallow: / 
+
+
+User-agent: StackRambler
+Disallow: / 
+
+
+User-agent: Surveybot
+Disallow: / 
+
+
+User-agent: Teoma
+Disallow: / 
+
+
+User-agent: Twitterbot/1.0
+Disallow: / 
+
+
+User-agent: Vscooter
+Disallow: / 
+
+
+User-agent: Yandex
+Disallow: / 
+
+
+User-agent: Yeti
+Disallow: / 
+
+
+User-agent: Zyborg
+Disallow: / 
+
+
+User-agent: *
+Disallow: / 
+
+
+Sitemap: http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/sitemap.xml
