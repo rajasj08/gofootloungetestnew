@@ -599,7 +599,7 @@ calc_distance:				WHILE ( (currPos + word_offset < word_len) AND (currPos + curr
 			if ( $include_misspellings ){
 			
 				// create a MySql misspellings function if it doesn't exists:
-				$this->sql_create_misspellings();
+				//$this->sql_create_misspellings();
 
 				$tolerance = array();
 				$tolerance_perc = $this->config->get('adsmart_search_misspelling_tolerance');
