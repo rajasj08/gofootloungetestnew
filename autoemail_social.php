@@ -25,7 +25,7 @@ if ($conn->connect_error) {
   
 $result = $conn->query($sql); 
       
- $message1= htmlentities(file_get_contents("http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/newmail.html"));   
+ $message1= htmlentities(file_get_contents("https://footlounge.in/newmail.html"));   
          $message1=html_entity_decode($message1); 
          $tomail='rselakki@yahoo.com';   
          $row=1; 

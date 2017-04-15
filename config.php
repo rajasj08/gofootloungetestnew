@@ -4,12 +4,12 @@
 //ini_set("display_errors", 1);
 
 // HTTP
-define('HTTP_SERVER', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/');
+define('HTTP_SERVER', 'https://footlounge.in/');
 $documentRoot = $_SERVER['DOCUMENT_ROOT'].'/';
 define('DOCUMENT_ROOT', $documentRoot); 
 
 // HTTPS
-define('HTTPS_SERVER', 'http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/');
+define('HTTPS_SERVER', 'https://footlounge.in/');
 
 $documentRoot = $_SERVER['DOCUMENT_ROOT'].'/';
 
@@ -26,7 +26,7 @@ define('DIR_DOWNLOAD', $documentRoot. 'download/');
 define('DIR_LOGS', $documentRoot. 'system/logs/');
 // DB
 
-define('CurrentHost','http://gofootlounge-env.ap-south-1.elasticbeanstalk.com'); 
+define('CurrentHost','https://footlounge.in'); 
 
 define('DB_DRIVER', 'mysqliz');
 define('DB_HOSTNAME', 'aac04bee6kk2cw.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');

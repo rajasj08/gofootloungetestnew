@@ -15,7 +15,7 @@
 <?php foreach ($orders as $order) { ?>
 <div style="page-break-after: always;">
   <div class="divtopcls">
-        <div style="float:left;"><a href="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/"><img style="height:50px;" src="http://gofootlounge-env.ap-south-1.elasticbeanstalk.com/image/data/lo2logo.png" title="FootLounge" alt="FootLounge"></a></div>
+        <div style="float:left;"><a href="https://footlounge.in/"><img style="height:50px;" src="https://footlounge.in/image/data/lo2logo.png" title="FootLounge" alt="FootLounge"></a></div>
         <h1 style="float:right;" class="righttxtcls"><?php echo $text_invoice; ?></h1>
   </div>
   <!--<h1><?php echo $text_invoice; ?></h1>-->

@@ -394,7 +394,9 @@ if( $sum_total )  {
 								<?php } ?>
 								<b><?php echo $option['name']; ?>:</b></span>
 								<?php foreach ($option['option_value'] as $option_value) {
-$ps = split("<span class='WebRupee'>Rs</span>", $option_value['price']);
+$ps="";
+if($option_value['price']) { $ps = split("<span class='WebRupee'>Rs</span>", $option_value['price']); }
+
 
  ?>
 								 
