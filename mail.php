@@ -1,13 +1,21 @@
 <?php
-$to      = 'balajic133@gmail.com';
-$subject = 'the subject';
-$message = 'hello<br/><p>Hai</p>';
-$headers = 
-'MIME-Version: 1.0' . "\r\n".
-'From: webmaster@example.com' . "\r\n" .
-'Content-type: text/html; charset=iso-8859-1' . "\r\n".
-    
-    'X-Mailer: PHP/' . phpversion();
+$servername = "aac04bee6kk2cw.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com";
+$username = "fladmin";
+$password = "Welcome!23";
+$dbname = "ebdb";
+/*
+$servername = "localhost";
+$username = "foot_footnew";
+$password = "Welcome!23";
+$dbname = "footlounge_120116";*/
 
-mail($to, $subject, $message, $headers);
+$con = @mysqli_connect($servername, $username, $password, $dbname);
+
+// Check connection
+if (!$con)
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+  
+echo "sdfdsf"; die; 
 ?>  

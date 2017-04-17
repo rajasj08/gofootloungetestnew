@@ -352,7 +352,7 @@ fbq('track', "PageView");</script>
 								<li><a href="<?php echo CurrentHost; ?>/voucher" data-toggle="tooltip" title="Gift Cards" data-placement="bottom"><i class="fa fa-gift"></i><?php echo $text_giftcards; ?></a></li> 
 
 								<!--<li><a href="<?php echo $shopping_cart; ?>"><i class="fa fa-bookmark"></i><?php echo $text_shopping_cart; ?></a></li>-->
-								<li><a class="last" href="<?php echo CurrentHost; ?>/trackorder.html" target="_blank" data-toggle="tooltip" title="Track Order" data-placement="bottom"><i class="fa fa-share"></i><?php echo 'Track Order'; ?></a></li>
+								<li><a class="last" href="<?php echo CurrentHost; ?>/trackyourorder.php" target="_blank" data-toggle="tooltip" title="Track Order" data-placement="bottom"><i class="fa fa-share"></i><?php echo 'Track Order'; ?></a></li>
 
 <!--<li><a class="last" href="<?php echo $checkout; ?>"><i class="fa fa-share"></i><?php echo $text_checkout; ?></a></li> -->
 	
