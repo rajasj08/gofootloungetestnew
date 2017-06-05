@@ -44,13 +44,15 @@
 							<?php echo $order['total']; ?>
 						</div>	
 					</div>
-                                        <?php if($order['ordersmsdetails']){ ?>
+                                        <?php if(isset($order['ordersmsdetails'][0])){ ?>
                                         <div class="col-lg-6 col-sm-4 col-xs-12">
 						<div class="list-content">
 							<b>Track Order: </b> 
 							<a class="trackcls"><?php echo $order['ordersmsdetails'][0]['track_url']; ?></a><br /> 
 							<b>Way Bill Number:</b> 
 							<?php echo $order['ordersmsdetails'][0]['way_bill_no']; ?> <br/>
+							<b>Courier Company:</b> 
+							<span class="texttranscls"><?php echo $order['ordersmsdetails'][0]['courier_company']; ?> </span><br/> 
                                                        <!-- <b>Estimated Delivery Date:</b> 
 							<?php //echo $order['ordersmsdetails'][0]['way_bill_no']; ?> -->
 						</div>	

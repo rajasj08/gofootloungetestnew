@@ -1917,8 +1917,8 @@ class ControllerModuleSuperCategoryMenuAdvanced extends Controller {
 							 $html.=$filtros_seleccionados[utf8_strtoupper($this->language->get('stock_text')).'_SS_A']['html'];
 						}
 						
-					if ($results!="no_stock" && $results>0 && !$is_selected){
-						
+					//if ($results!="no_stock" && $results>0 && !$is_selected){
+						if ($results!="no_stock" && !$is_selected){
 						$stockstatuses_final["no_stock"] = array(
 							'stock_id'		 => "stock",
 							'name'    	     => $this->language->get('in_stock_text'),

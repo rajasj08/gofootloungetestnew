@@ -5,6 +5,8 @@
 <title><?php echo $title; ?></title>
 <base href="<?php echo $base; ?>" />
 <link rel="stylesheet" type="text/css" href="view/stylesheet/invoice.css" />
+ <link rel="stylesheet" type="text/css" href="<?php echo CurrentHost;?>/catalog/view/javascript/webrupee_font.min.css" />
+
 <style>
 .righttxtcls{ margin-bottom: 0px !important; border-bottom: none !important; padding-top: 10px;}
 .divtopcls{ min-height: 50px; border-bottom: 1px solid #ccc;}
@@ -64,7 +66,7 @@
     </tr>
     <tr>
       <td><?php echo $order['payment_address']; ?><br/>
-        <?php echo $order['email']; ?><br/>
+        <!--<?php echo $order['email']; ?><br/>-->
         <?php echo $order['telephone']; ?>
         <?php if ($order['payment_company_id']) { ?>
         <br/>
@@ -118,7 +120,16 @@
       if($total['code']=='total')
       {
         $total['value']=round($total['value']+$coupon_tot);
-        $total['text']='<span class="WebRupee">Rs</span>'.$total['value']; 
+        $total['text']='<span class="WebRupee">Rs</span>'.round($total['value'],2); 
+      }
+      if($total['code']=='shipping')
+      {
+        $total['title']="Delivery Charges"; 
+        if( $total['value']==0){$total['text']="Free";}  
+      }
+       if($total['code']=='sub_total')
+      {
+        $total['text']='<span class="WebRupee">Rs</span>'.round($total['value'],2);  
       }
 
      ?>
@@ -142,24 +153,32 @@
 <?php } ?>
 
 <p><h2  style="text-align:center;">Thank you for shopping at Footlounge!</h2></p>
-  <div style=" min-height:50px;">
-    <div style="width:30%; float:left; text-align:right;"><a class="swap-image">
+  <div style=" min-height:50px; text-align:center;">
+    <div><span style=""><a class="swap-image">
                 <img src="<?php echo CurrentHost; ?>/image/data/AdidasQ2%20Accessories/AJ9639%203s%20Crew%20HC%201PP%20Black%20Socks/Unisex_TRAINING_CREWSOCKS_AJ9639_1.jpg.zoom.jpeg" title="Adidas 3s Crew HC 1PP Black Socks" alt="Adidas 3s Crew HC 1PP Black Socks" class="front" style="height:50px; width:50px;">
                                 
-              </a></div>
-    <div style="width:40%; float:left;"><p style=" margin-top:20px; font-weight:bold"><h3>Leave us a Review and Earn a FREE pair of socks from FootLounge.</h3></p></div>
-    <div style="width:30%; float:left; text-align:left;"><a class="swap-image">
+              </a></span><span style="position: relative;bottom: 20px;font-size: 14px;font-weight: bold;">Leave us a Review and Earn a FREE pair of socks from FootLounge.</span><span><a class="swap-image">
                 <img src="<?php echo CurrentHost; ?>/image/data/AdidasQ2%20Accessories/AJ9639%203s%20Crew%20HC%201PP%20Black%20Socks/Unisex_TRAINING_CREWSOCKS_AJ9639_1.jpg.zoom.jpeg" title="Adidas 3s Crew HC 1PP Black Socks" alt="Adidas 3s Crew HC 1PP Black Socks" class="front" style="height:50px; width:50px;">
                                 
-              </a></div>
+              </a></span></div>
+    <!--<div ><p style=" margin-top:20px; font-weight:bold"><h3>Leave us a Review and Earn a FREE pair of socks from FootLounge.</h3></p></div>
+    <div><a class="swap-image">
+                <img src="<?php echo CurrentHost; ?>/image/data/AdidasQ2%20Accessories/AJ9639%203s%20Crew%20HC%201PP%20Black%20Socks/Unisex_TRAINING_CREWSOCKS_AJ9639_1.jpg.zoom.jpeg" title="Adidas 3s Crew HC 1PP Black Socks" alt="Adidas 3s Crew HC 1PP Black Socks" class="front" style="height:50px; width:50px;">
+                                
+              </a></div>-->
     </div>          
 
     <div style=" margin-top:10px;">
     <div style="width:50%; float:left;"><a href="https://www.facebook.com/footlounge.online/" class="swap-image">
                 <img src="<?php echo CurrentHost; ?>/image/social-icons/FootLounge-FaceBook-Logo.png" title="Adidas 3s Crew HC 1PP Black Socks" alt="Adidas 3s Crew HC 1PP Black Socks" class="front" style="width: 50px; height: 50px;margin-top: 20px;">
+
                                 
-              </a></div>
-    <div style="width:50%; float:left; text-align:right;"><a href="<?php echo CurrentHost; ?>/"><img src="<?php echo CurrentHost; ?>/image/social-icons/FootLounge-WWW-Logo.png" title="FootLounge" alt="FootLounge" style="height:55px; margin-top:15px;"></a></div>
+              </a><br/>
+<a href="https://www.facebook.com/footlounge.online/" class="swap-image">https://www.facebook.com/footlounge.online/</a>
+</div>
+    <div style="width:50%; float:left; text-align:right;"><a href="<?php echo CurrentHost; ?>/"><img src="<?php echo CurrentHost; ?>/image/social-icons/FootLounge-WWW-Logo.png" title="FootLounge" alt="FootLounge" style="height:55px; margin-top:15px;"></a><br/>
+<a href="<?php echo CurrentHost; ?>/" class="swap-image"><?php echo CurrentHost; ?></a>
+</div>
         
   </div>
 </body>

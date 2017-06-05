@@ -27,6 +27,7 @@ define('DIR_LOGS', $documentRoot. 'system/logs/');
 // DB
 
 define('CurrentHost','https://footlounge.in'); 
+define('mailchimp_APIkey','b2d475cf2e336960cd8faa96d8209b3f-us12');  
 
 define('DB_DRIVER', 'mysqliz');
 define('DB_HOSTNAME', 'aac04bee6kk2cw.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');

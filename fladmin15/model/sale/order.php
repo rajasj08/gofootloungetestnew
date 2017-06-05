@@ -382,7 +382,19 @@ class ModelSaleOrder extends Model {
 				$language_filename = '';
 				$language_directory = '';
 			}
-			
+
+                       
+                        if($order_query->row['customer_id'] && !is_numeric($order_query->row['payment_address_2'])) {
+                       $mobileno_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer` WHERE customer_id = '" . (int)$order_query->row['customer_id'] . "'");
+
+			if ($mobileno_query->num_rows) {
+				$order_query->row['payment_address_2'] = $mobileno_query->row['mobile'];
+			} else {
+				$order_query->row['payment_address_2'] = '';
+			}
+                          }
+
+			//print_r('<pre>'); print_r($order_query); die; 
 			return array(
 				'order_id'                => $order_query->row['order_id'],
 				'invoice_no'              => $order_query->row['invoice_no'],
@@ -1433,6 +1445,21 @@ public function getProduct($product_id) {
         else
         {return 0;}
       }
+
+
+    function getOrdershippinginfo($orderid)
+   {
+
+       $sql = "SELECT * FROM `" . DB_PREFIX . "ordersms` where order_id=".$orderid;
+         
+          
+         
+           
+           $query = $this->db->query($sql);
+
+
+		return $query->rows;
+   } 
 
 
         

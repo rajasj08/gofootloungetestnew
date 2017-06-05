@@ -113,7 +113,7 @@ class ControllerAccountOrder extends Controller {
 				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
 				'href'       => $this->url->link('account/order/info', 'order_id=' . $result['order_id'], 'SSL'),
 				'reorder'    => $this->url->link('account/order', 'order_id=' . $result['order_id'], 'SSL'),
-                                 'ordersmsdetails'  => $smsdetails	
+                'ordersmsdetails'  => $smsdetails	
 			);
 		}
 

@@ -945,12 +945,16 @@ if (isset($this->error['payment_address_2'])) {
       }
         
     if (isset($this->request->post['order_status_id'])) {
+
           $this->data['order_status_id'] = $this->request->post['order_status_id'];
       } elseif (!empty($order_info)) { 
+
       $this->data['order_status_id'] = $order_info['order_status_id'];
     } else {
           $this->data['order_status_id'] = '';
       }
+
+             
       
     $this->load->model('localisation/order_status');
     
@@ -963,6 +967,8 @@ if (isset($this->error['payment_address_2'])) {
     } else {
           $this->data['comment'] = '';
       } 
+
+     
         
     $this->load->model('sale/customer');
 
@@ -1215,7 +1221,12 @@ if (isset($this->error['payment_address_2'])) {
         'reward'           => $order_product['reward']
       );
     }
-    
+
+    //get order sms info
+
+   /*$this->data['order_shippinginfo'] = $this->model_sale_order->getOrdershippinginfo($this->request->get['order_id']); 
+if($this->data['order_shippinginfo']){$this->data['order_shippinginfo']=$this->data['order_shippinginfo'];}
+  //print_r('<pre>'); print_r($this->data['order_shippinginfo']); die; */
     if (isset($this->request->post['order_voucher'])) {
       $this->data['order_vouchers'] = $this->request->post['order_voucher'];
     } elseif (isset($this->request->get['order_id'])) {
@@ -1690,7 +1701,7 @@ if (isset($this->error['payment_address_2'])) {
       } else {
         $this->data['order_status'] = '';
       }
-      
+     
       $this->data['ip'] = $order_info['ip'];
       $this->data['forwarded_ip'] = $order_info['forwarded_ip'];
       $this->data['user_agent'] = $order_info['user_agent'];
@@ -1786,6 +1797,8 @@ if (isset($this->error['payment_address_2'])) {
           );
         }
       }
+
+
       
       $this->data['order_statuses'] = $this->model_localisation_order_status->getOrderStatuses();
 
@@ -2701,6 +2714,7 @@ if (isset($this->error['payment_address_2'])) {
           }
           if($order_status_name == 'Shipped') //processed
           {
+
              
             if($this->request->post['waybillno']=='')
              {$waybillno='XXX';} else 
@@ -2729,29 +2743,31 @@ if (isset($this->error['payment_address_2'])) {
             {
               $linkthis='https://www.aramex.com/express/track.aspx';
             }
-            $dynmsg="Your Order ID: ".$this->request->post['order_id']." is shipped. Way Bill Number is ".$waybillno.". To track your order click on ".$linkthis." - Team FootLounge (+91-91768-70701)";  
-              
+           /* $dynmsg="Your Order ID: ".$this->request->post['order_id']." is shipped. Way Bill Number is ".$waybillno.". To track your order click on ".$linkthis." - Team FootLounge (+91-91768-70701)";  */
+
+            $dynmsg="Your Order ID: ".$this->request->post['order_id']." is shipped. Way Bill Number is ".$waybillno.". To track your order go to ".CurrentHost."/trackyourorder.php select ".$this->request->post['order_track']." and input the Way Bill Number.  Reply to this email or call us at +91-91768-70701, if you have any additional questions"; 
+               
              
           }
-          if($order_status_name == 'Completed')
+          if($order_status_name == 'Completed') 
           {
             //$dynmsg="Your Order ID: ".$this->request->post['order_id']." is delivered. Leave us your valuable Review on Facebook (www.facebook.com/footlounge.online). Get a non-expiring EXTRA 10% off coupon for your next purchase. Team FootLounge (+91-91768-70701)"; 
             $dynmsg="Your Order ID: ".$this->request->post['order_id']." is delivered. Leave us your valuable Review on Facebook (www.facebook.com/footlounge.online). Team FootLounge (+91-91768-70701)"; 
           }  
-
+           
             $sendsms=new sendsms("http://dnd.bdsindia.net/api/v3",'sms', "A12dc88995cc17ee8970123b6abda7059", "FLoung");
-          $sendsms->send_sms($order_status_info[1], $dynmsg, 'xml'); 
- 
+            $sendsms->send_sms($order_status_info[1], $dynmsg, 'xml'); 
+  
              
 
           $sendsms->schedule_sms($order_status_info[1], "message"
                                , "http://www.techbee.domain/yourdlrpage&custom=XX", 'xml',
                                 'YYYY-MM-DD HH:MM PM/AM');
-          
-          $sendsms->messagedelivery_status("".$order_status_info[1]."-1");
+           
+          $sendsms->messagedelivery_status("".$order_status_info[1]."-1"); 
           $sendsms->groupdelivery_status($order_status_info[1]);    
           $order_status_info=$this->model_sale_order->saveordermessage($this->request->post['order_id'],$dynmsg,$sms_waybillno,$linkthis,$this->request->post['order_track'],$order_status_name);     
-					echo 1;
+          echo 1;
       
           } else { echo 0;}    
     }  

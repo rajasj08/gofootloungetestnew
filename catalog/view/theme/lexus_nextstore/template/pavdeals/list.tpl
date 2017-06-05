@@ -14,13 +14,25 @@ $categoryPzoom 	= $categoryConfig['category_pzoom'];
 
 <div class="container">
 	<div class="row">
-		<?php if( $SPAN_DEALS[0] ): ?>
+		<!--<?php if( $SPAN_DEALS[0] ): ?>
 			<aside class="col-lg-<?php echo $SPAN_DEALS[0];?> col-md-<?php echo $SPAN_DEALS[0];?> col-sm-12 col-xs-12">
 				<?php echo $column_left; ?>
 			</aside>	
-		<?php endif; ?>	
+		<?php endif; ?>	-->
 
-		<section class="col-lg-<?php echo $SPAN_DEALS[1];?> col-md-<?php echo $SPAN_DEALS[1];?> col-sm-12 col-xs-12">
+		 <?php if ($products) { ?>
+		<?php if( $SPAN_DEALS[0] ): ?>
+
+			<aside class="col-md-<?php echo $SPAN[0];?>">
+				<?php echo $column_left; ?> 
+			</aside>	
+		<?php endif; ?> 
+
+		<?php } if(!$products) { ?>
+		<section class="col-md-<?php echo $SPAN[0]+$SPAN[1];?>">
+		<?php } else{ ?>
+		<section class="col-md-<?php echo $SPAN[1];?>">
+		<?php } ?>
 			<div id="content">
 				<?php echo $content_top; ?>
 				<div class="box productdeals list-deals">

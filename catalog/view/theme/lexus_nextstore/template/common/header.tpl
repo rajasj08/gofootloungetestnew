@@ -328,6 +328,32 @@ fbq('track', "PageView");</script>
 /></noscript> 
 <!-- End Facebook Pixel Code -->
 
+<!--<script src="catalog/view/javascript/jquery/enscroll-0.6.1.min.js"></script> -->
+
+<script src="catalog/view/javascript/jquery/jquery.custom-scrollbar.js"></script>
+<link type="text/css" rel="stylesheet" href="catalog/view/theme/lexus_nextstore/stylesheet/jquery.custom-scrollbar.css"/>
+
+<style>
+#horizontal-scrollbar-demo {
+            width: 100%;
+            min-height: 105px;
+        }
+
+        /*Horizontal scrollbar - set width of overview or make it expand horizontal like below*/
+        #horizontal-scrollbar-demo .overview {
+            /*width: 1836px;*/
+            /* or */
+            white-space: nowrap;
+        }
+        /* #horizontal-scrollbar-demo .viewport {
+             width:100% !important; 
+         } 
+         #horizontal-scrollbar-demo .viewport {
+            
+         }*/   
+
+</style>
+
 
 
 </head>

@@ -124,90 +124,90 @@ echo '<option value="'.$cdata['coupon_id'].'">'.$cdata['coupon_name'].'</option>
 <script type="text/javascript"><!--
 function filter() {
 
-	url = 'index.php?route=tool/export/getabandonedusers&token=<?php echo $token; ?>';
-	
-	var filter_ab_cust_id = $('input[name=\'filter_ab_cust_id\']').attr('value');
-	
-	if (filter_ab_cust_id) {
-		url += '&filter_ab_cust_id=' + encodeURIComponent(filter_ab_cust_id);
-	}
-	
-	var filter_userid = $('input[name=\'filter_userid\']').attr('value');
-	
-	if (filter_userid) {
-		url += '&filter_userid=' + encodeURIComponent(filter_userid);
-	}
-	
-	var filter_cust_mailid = $('input[name=\'filter_cust_mailid\']').attr('value');
-	
-	if (filter_cust_mailid) {
-		url += '&filter_cust_mailid=' + encodeURIComponent(filter_cust_mailid);
-	}	
+  url = 'index.php?route=tool/export/getabandonedusers&token=<?php echo $token; ?>';
+  
+  var filter_ab_cust_id = $('input[name=\'filter_ab_cust_id\']').attr('value');
+  
+  if (filter_ab_cust_id) {
+    url += '&filter_ab_cust_id=' + encodeURIComponent(filter_ab_cust_id);
+  }
+  
+  var filter_userid = $('input[name=\'filter_userid\']').attr('value');
+  
+  if (filter_userid) {
+    url += '&filter_userid=' + encodeURIComponent(filter_userid);
+  }
+  
+  var filter_cust_mailid = $('input[name=\'filter_cust_mailid\']').attr('value');
+  
+  if (filter_cust_mailid) {
+    url += '&filter_cust_mailid=' + encodeURIComponent(filter_cust_mailid);
+  } 
 
-	var filter_order_date = $('input[name=\'filter_order_date\']').attr('value');
+  var filter_order_date = $('input[name=\'filter_order_date\']').attr('value');
 
-	if (filter_order_date) {
-		url += '&filter_order_date=' + encodeURIComponent(filter_order_date);
-	}	
-	
-				
-	location = url;
+  if (filter_order_date) {
+    url += '&filter_order_date=' + encodeURIComponent(filter_order_date);
+  } 
+  
+        
+  location = url;
 }
 //--></script>  
 <script type="text/javascript"><!--
 $(document).ready(function() {
-	$('.date').datepicker({dateFormat: 'yy-mm-dd'});
+  $('.date').datepicker({dateFormat: 'yy-mm-dd'});
 });
 //--></script> 
 <script type="text/javascript"><!--
 $('#form input').keydown(function(e) {
-	if (e.keyCode == 13) {
-		filter();
-	}
+  if (e.keyCode == 13) {
+    filter();
+  }
 });
 //--></script> 
 <script type="text/javascript"><!--
 $.widget('custom.catcomplete', $.ui.autocomplete, {
-	_renderMenu: function(ul, items) {
-		var self = this, currentCategory = '';
-		
-		$.each(items, function(index, item) {
-			if (item.category != currentCategory) {
-				ul.append('<li class="ui-autocomplete-category">' + item.category + '</li>');
-				
-				currentCategory = item.category;
-			}
-			
-			self._renderItem(ul, item);
-		});
-	}
+  _renderMenu: function(ul, items) {
+    var self = this, currentCategory = '';
+    
+    $.each(items, function(index, item) {
+      if (item.category != currentCategory) {
+        ul.append('<li class="ui-autocomplete-category">' + item.category + '</li>');
+        
+        currentCategory = item.category;
+      }
+      
+      self._renderItem(ul, item);
+    });
+  }
 });
 
 $('input[name=\'filter_customer\']').catcomplete({
-	delay: 500,
-	source: function(request, response) {
-		$.ajax({
-			url: 'index.php?route=sale/customer/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request.term),
-			dataType: 'json',
-			success: function(json) {		
-				response($.map(json, function(item) {
-					return {
-						category: item.customer_group,
-						label: item.name,
-						value: item.customer_id
-					}
-				}));
-			}
-		});
-	}, 
-	select: function(event, ui) {
-		$('input[name=\'filter_customer\']').val(ui.item.label);
-						
-		return false;
-	},
-	focus: function(event, ui) {
-      	return false;
-   	}
+  delay: 500,
+  source: function(request, response) {
+    $.ajax({
+      url: 'index.php?route=sale/customer/autocomplete&token=<?php echo $token; ?>&filter_name=' +  encodeURIComponent(request.term),
+      dataType: 'json',
+      success: function(json) {   
+        response($.map(json, function(item) {
+          return {
+            category: item.customer_group,
+            label: item.name,
+            value: item.customer_id
+          }
+        }));
+      }
+    });
+  }, 
+  select: function(event, ui) {
+    $('input[name=\'filter_customer\']').val(ui.item.label);
+            
+    return false;
+  },
+  focus: function(event, ui) {
+        return false;
+    }
 });
 
 function sendupdateorder(abuserid,mailid) //send update order

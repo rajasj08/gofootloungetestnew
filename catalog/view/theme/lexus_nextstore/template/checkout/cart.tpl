@@ -39,8 +39,9 @@
 		</div>
 		<div class="checkout wrapper no-margin splcheckoutcls">		
 			<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" role="form" class="mycartform">
-				<div class="cart-info table-responsive cartinfobordercls">
-					<table class="table">
+				<div  class="cart-info table-responsive">
+                                        <div id="horizontal-scrollbar-demo" class="default-skin demo">
+					<table class="table"> 
 					<!--	<thead>
 							<tr>
 								<td class="image"><?php echo $column_image; ?></td>
@@ -118,9 +119,10 @@
 							<?php } ?>
 						</tbody>
 					</table>
+                                      </div>
 				</div>
 <!--<div class="left"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div> -->
-<div class="left mycartleftdivq"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div>
+<div class="left mycartleftdivq mobilebtnstyle"><a href="<?php echo $continue; ?>" class="button btn btn-theme-default btnconmovecls"><?php echo $button_shopping; ?></a></div>
 			</form>
 			
 			<!--<div class="cart_coupon_voucher_reward_msg"> <h5 class="text-right">All coupon codes/gift vouchers can be applied at checkout.</h5></div> -->
@@ -567,6 +569,26 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 </div><!-- /.modal -->
 <script>
 
+
+    $(window).load(function () {
+        if ($(window).width() < 768) {
+
+          if($(".mycartform .table-responsive").length == 1){
+           
+
+         $(".cart-info").removeClass('table-responsive');}
+        $(".demo").customScrollbar();
+       // $(".scrollable .viewport").css('height','105px !important'); 
+         
+        }
+      else
+       {
+            if($(".mycartform .table-responsive").length != 1){
+            $(".cart-info").addClass('table-responsive');}
+        }
+       
+    });
+
 	
 	function addcartcoupon() // add coupon for the cart
 	{
@@ -803,6 +825,8 @@ ecomm_totalvalue: [<?php $count=count($products); $j=1;$priceval='';
 
 							
 	}
+
+
 </script>
 
 <?php echo $footer; ?> 

@@ -1643,6 +1643,7 @@ $('#button-payment-method').live('click', function() {
 			$('.wait').remove();
 		},			
 		success: function(json) {
+
 		       
                          //code for updating abandonent custiomer table
 					$.ajax({

@@ -3,8 +3,8 @@
  * @package Pav Opencart Theme Framework for Opencart 1.5.x
  * @version 1.1
  * @author http://www.pavothemes.com
- * @copyright	Copyright (C) Augus 2013 PavoThemes.com <@emai:pavothemes@gmail.com>.All rights reserved.
- * @license		GNU General Public License version 2
+ * @copyright Copyright (C) Augus 2013 PavoThemes.com <@emai:pavothemes@gmail.com>.All rights reserved.
+ * @license   GNU General Public License version 2
 *******************************************************/
 
 require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/config.tpl" );
@@ -17,25 +17,25 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
 <div class="row"> 
 
 <?php if( $SPAN_HOME[0] ): ?>
-	<aside class="col-lg-<?php echo $SPAN_HOME[0];?> col-md-<?php echo $SPAN_HOME[0];?> col-sm-12 col-xs-12">
-		<?php echo $column_left; ?>
-	</aside>
+  <aside class="col-lg-<?php echo $SPAN_HOME[0];?> col-md-<?php echo $SPAN_HOME[0];?> col-sm-12 col-xs-12">
+    <?php echo $column_left; ?>
+  </aside>
 <?php endif; ?>
-		
+    
 <!-- <section class="col-lg-<?php echo $SPAN_HOME[1];?> col-md-<?php echo $SPAN_HOME[1];?> col-sm-12 col-xs-12">  -->
-<section>	    
-	<div id="content">
-		<?php echo $offer_slideshow; ?>
-		<?php echo $content_top; ?>
-		<h1 class="new_page_disp1"><?php echo @$heading_title; ?></h1>
-		<?php echo $content_bottom; ?>
-	</div>
+<section>     
+  <div id="content">
+    <?php echo $offer_slideshow; ?>
+    <?php echo $content_top; ?>
+    <h1 class="new_page_disp1"><?php echo @$heading_title; ?></h1>
+    <?php echo $content_bottom; ?>
+  </div>
 </section>
-	
+  
 <?php if( $SPAN_HOME[2] ): ?>
-	<aside class="col-lg-<?php echo $SPAN_HOME[2];?> col-md-<?php echo $SPAN_HOME[2];?> col-sm-12 col-xs-12">	
-		<?php echo $column_right; ?>
-	</aside>
+  <aside class="col-lg-<?php echo $SPAN_HOME[2];?> col-md-<?php echo $SPAN_HOME[2];?> col-sm-12 col-xs-12"> 
+    <?php echo $column_right; ?>
+  </aside>
 <?php endif; ?>
 
 </div>
@@ -106,7 +106,7 @@ ecomm_pagetype: "home"
 </div><!-- /.modal -->
 
 <script>
-/*
+
   $( document ).ready(function() {
 
 setTimeout(function(){
@@ -132,7 +132,7 @@ setTimeout(function(){
  }, 15000);   //set timeout end
 
    
-});*/
+}); 
 </script>  
   
 <script>
@@ -188,7 +188,7 @@ function subscribenews()
            setTimeout(function() {
         $('#NewssubscribeModal').modal('show');
          $("#failure_msgs").hide();
-    }, 2000);
+    }, 4000);
           }
           $("#semailid").val(''); 
         }
