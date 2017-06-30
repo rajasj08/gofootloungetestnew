@@ -166,6 +166,11 @@
                                                         $total['title']='Order Total';
 						}
 
+						if($total['code']=='tax')
+					      {
+					        $total['title']='Estimated GST'; 
+					      }
+
                                                 if($total['code']=='shipping')
                                                 { $total['title']='Delivery';}
 

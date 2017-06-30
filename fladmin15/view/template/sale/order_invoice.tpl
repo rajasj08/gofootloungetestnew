@@ -58,6 +58,10 @@
           <?php } ?>
         </table></td>
     </tr>
+    <tr>
+            <td><b>GSTIN No:</b></td>
+            <td>33AAAPM7365C1Z0</td>
+          </tr>
   </table>
   <table class="address">
     <tr class="heading">
@@ -130,6 +134,11 @@
        if($total['code']=='sub_total')
       {
         $total['text']='<span class="WebRupee">Rs</span>'.round($total['value'],2);  
+      }
+
+       if($total['code']=='tax')
+      {
+        $total['title']='Other Estimated GST'; 
       }
 
      ?>

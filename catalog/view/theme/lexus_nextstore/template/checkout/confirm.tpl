@@ -66,6 +66,10 @@
                                                           
 							$couponvalue=$total['value'];
 						}
+						if($total['code']=='tax')
+					      {
+					        $total['title']='Estimated GST'; 
+					      }
 						if($total['code']=='total')
 						{
 							$total['value']=$total['value']+round($couponvalue); 

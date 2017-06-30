@@ -59,6 +59,10 @@
 							$total['value']=$total['value']+round($couponvalue); 
 							$total['text']=$this->currency->format($total['value']); 
 						}
+						if($total['code']=='tax')
+					      {
+					        $total['title']='Estimated GST'; 
+					      }
                                                 if($total['code']=='shipping')
                                                 { $total['title']='Delivery';}
 ?>
