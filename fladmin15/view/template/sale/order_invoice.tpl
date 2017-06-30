@@ -55,13 +55,15 @@
             <td><b><?php echo $text_shipping_method; ?></b></td>
             <td><?php echo $order['shipping_method']; ?></td>
           </tr>
+
           <?php } ?>
-        </table></td>
-    </tr>
-    <tr>
+          <tr>
             <td><b>GSTIN No:</b></td>
             <td>33AAAPM7365C1Z0</td>
           </tr>
+        </table></td>
+    </tr>
+    
   </table>
   <table class="address">
     <tr class="heading">
