@@ -21,23 +21,24 @@ fclose($fp);
 header("Content-Type: image");
 //if($_GET["file"] == 'Mens_Shoe_Size_Measurer1' || $_GET["file"] == 'Mens_Shoe_Size_Measurer2')
 //{
-if($_GET["file"] == 'Mens-Shoe-Size-Measurer1')
-$file = 'image/mens-shoe-size-finder-top-copy-footlounge.jpg';
+$file='';
+if($_GET["file"] == 'Mens-Shoe-Size-Measurer1'){
+$file = 'image/mens-shoe-size-finder-top-copy-footlounge.jpg';}
 
-else if($_GET["file"] == 'Mens-Shoe-Size-Measurer2')
-$file = 'image/mens-shoe-size-finder-bottom-copy-footlounge.jpg';
+else if($_GET["file"] == 'Mens-Shoe-Size-Measurer2'){
+$file = 'image/mens-shoe-size-finder-bottom-copy-footlounge.jpg';}
 
-else if($_GET["file"] == 'Womens-Shoe-Size-Measurer1')
-$file = 'image/womens-shoe-size-finder-top-copy-footlounge.jpg';
+else if($_GET["file"] == 'Womens-Shoe-Size-Measurer1'){
+$file = 'image/womens-shoe-size-finder-top-copy-footlounge.jpg';}
 
-else if($_GET["file"] == 'Womens-Shoe-Size-Measurer2')
-$file = 'image/womens-shoe-size-finder-bottom-copy-footlounge.jpg';
+else if($_GET["file"] == 'Womens-Shoe-Size-Measurer2'){
+$file = 'image/womens-shoe-size-finder-bottom-copy-footlounge.jpg';}
 
-else if($_GET["file"] == 'KIDS-SHOE-SIZER1')
-$file = 'image/kids-shoe-size-finder-top-copy-footlounge.jpg';    
+else if($_GET["file"] == 'KIDS-SHOE-SIZER1'){
+$file = 'image/kids-shoe-size-finder-top-copy-footlounge.jpg';    }
 
-else if($_GET["file"] == 'KIDS-SHOE-SIZER2')
-$file = 'image/kids-shoe-size-finder-bottom-copy-footlounge.jpg'; 
+else if($_GET["file"] == 'KIDS-SHOE-SIZER2'){
+$file = 'image/kids-shoe-size-finder-bottom-copy-footlounge.jpg'; }
 /*$files = array('image/foot_lounge_know_your_size_mens_top_copy.jpg', 'image/foot_lounge_know_your_size_mens_bottom_copy.jpg');
 $zipname = 'file.zip';
 $zip = new ZipArchive;
@@ -52,6 +53,8 @@ header('Content-disposition: attachment; filename='.$zipname);
 header('Content-Length: ' . filesize($zipname));
 readfile($zipname); */
 
+
+if($file){
 header("Content-Disposition: image; filename=" . urlencode($file));   
 header("Content-Type: image");
 header("Content-Type: image");
@@ -65,6 +68,8 @@ while (!feof($fp))
     flush(); // this is essential for large downloads
 } 
 fclose($fp); 
+}
+
 
 /*}
 else
