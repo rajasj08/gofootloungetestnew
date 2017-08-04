@@ -30,7 +30,7 @@ define('CurrentHost','https://footlounge.in');
 define('mailchimp_APIkey','b2d475cf2e336960cd8faa96d8209b3f-us12');  
 
 define('DB_DRIVER', 'mysqliz');
-define('DB_HOSTNAME', 'aa11gtp2x2bkyi1.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
+define('DB_HOSTNAME', 'aawjbsofyrltsz.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
 define('DB_USERNAME', 'fladmin');
 define('DB_PASSWORD', 'Welcome!23'); 
 define('DB_DATABASE', 'ebdb');
