@@ -140,15 +140,35 @@
 
        if($total['code']=='tax')
       {
-        $total['title']='Other Estimated GST'; 
-      }
+        
+        $taxpercent = substr( $total['title'], 14, 2);
+        $halftaxpercent = $taxpercent / 2;
+        $gst=(round($total['value']))/2; ?>
+
+<tr> <td align="right" colspan="4"><b>Tax Breakup (CGST <?php echo $halftaxpercent; ?>% + SGST <?php echo $halftaxpercent; ?>%): </b></td><td align="right">(<?php echo $this->currency->format($gst); ?> + <?php echo $this->currency->format($gst); ?> )&nbsp;= &nbsp;<?php echo $total['text']; ?></td></tr>
+
+         <!--<tr>
+      <td align="right" colspan="4"><b>Tax Breakup:</b></td>
+      <td align="right"></td>
+    </tr>  
+
+         <tr>
+      <td align="right" colspan="4"><b>CGST:</b></td>
+      <td align="right"><?php echo $this->currency->format($gst); ?></td>
+    </tr>   
+<tr>
+      <td align="right" colspan="4"><b>SGST:</b></td>
+      <td align="right"><?php echo $this->currency->format($gst); ?></td>
+    </tr>-->   
+      <?php } if($total['code']!='tax')
+      {
 
      ?>
     <tr>
       <td align="right" colspan="4"><b><?php echo $total['title']; ?>:</b></td>
       <td align="right"><?php echo $total['text']; ?></td>
     </tr>
-    <?php } ?>
+    <?php } } ?>
   </table>
   <?php if ($order['comment']) { ?>
   <table class="comment">

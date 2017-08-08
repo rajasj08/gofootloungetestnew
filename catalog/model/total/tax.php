@@ -11,7 +11,7 @@ class ModelTotalTax extends Model {
 					'sort_order' => $this->config->get('tax_sort_order')
 				);
 
-				$total += round($value);
+				//$total += round($value);
 			}
 		}
 	}
