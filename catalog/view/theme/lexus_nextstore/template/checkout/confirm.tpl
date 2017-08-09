@@ -66,10 +66,7 @@
                                                           
 							$couponvalue=$total['value'];
 						}
-						if($total['code']=='tax')
-					      {
-					        $total['title']='Estimated GST'; 
-					      }
+						
 						if($total['code']=='total')
 						{
 							$total['value']=$total['value']+round($couponvalue); 
@@ -77,6 +74,29 @@
                                                         $total['title']='Order Total';
                                                      
 						}
+
+						if($total['code']=='tax')
+						{ 
+
+ $taxpercent = substr( $total['title'], 14, 2);
+ $halftaxpercent = $taxpercent / 2;
+ $gst=(round($total['value']))/2; ?> 
+                                                  <tr> <td colspan="3" class="price"><b class="subitemsclr">Tax Breakup (CGST <?php echo $halftaxpercent; ?>% + SGST <?php echo $halftaxpercent; ?>%): </b></td><td class="cartfontcolorcls">(<?php echo $gst; ?> + <?php echo $gst; ?>)&nbsp; = &nbsp;<?php echo $total['text']; ?></td></tr> 
+
+                                                <!--<tr> <td colspan="3" class="price"><b class="subitemsclr">Tax Breakup (CGST <?php echo $halftaxpercent; ?>% + SGST <?php echo $halftaxpercent; ?>%): </b></td><td class="cartfontcolorcls">(<?php echo $this->currency->format($gst); ?> + <?php echo $this->currency->format($gst); ?>)&nbsp; = &nbsp;<?php echo $total['text']; ?></td></tr>	-->
+                                                       
+
+						<!--<tr> <td colspan="3" class="price"><b class="subitemsclr">Tax Breakup : </b></td><td></td></tr>	
+                                                        <tr>
+						      <td colspan="3" class="price"><b class="subitemsclr">CGST : </b></td>
+						      <td class="cartfontcolorcls"><?php echo $this->currency->format($gst); ?></td>
+					              </tr>
+                                                      <tr>
+						      <td colspan="3" class="price"><b class="subitemsclr">SGST : </b></td>
+						      <td class="cartfontcolorcls"><?php echo $this->currency->format($gst); ?></td>
+					              </tr> -->
+                                                     
+						<?php }
                                                 if($total['code']=='shipping')
                                                 { $total['title']='Delivery';}
                                                if($total['code']=='sub_total')
@@ -87,7 +107,7 @@
 						      <td colspan="3" class="price"><b class="subitemsclr">Discount<?php //echo $total['title']; ?>:</b></td>
 						      <td class="cartfontcolorcls"><?php echo $this->currency->format(-$discount_tot); ?></td>
 					              </tr> 
-                                              <?php   } else { 
+                                              <?php   } else { if($total['code']!='tax'){
                                                       
 						?>
 			<tr>
@@ -97,7 +117,7 @@
 						{ echo "makedarktotal"; }?>"><?php echo $total['text']; ?></td>
 			</tr>
 			<?php }
-                               } ?>
+                              } } ?>
 		</tfoot>
 	</table>
 </div>

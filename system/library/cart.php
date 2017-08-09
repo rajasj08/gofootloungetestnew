@@ -451,21 +451,37 @@ class Cart {
   	}
 	
 	public function getTaxes() {
-		$tax_data = array();
+		$tax_data = array(); 
 		
 		foreach ($this->getProducts() as $product) {
 			if ($product['tax_class_id']) {
 				$tax_rates = $this->tax->getRates($product['price'], $product['tax_class_id']);
 				
 				foreach ($tax_rates as $tax_rate) {
-					if (!isset($tax_data[$tax_rate['tax_rate_id']])) {
+
+                                             
+                                             $taxproductprice=$product['total']/(100+$tax_rate['rate'])*100;
+                                            
+                                             $taxonly=($product['total'] - floor($taxproductprice)); 
+                                        
+                                           $tax_data[$tax_rate['tax_rate_id']] = $taxonly ;
+
+                                       /* if (!isset($tax_data[$tax_rate['tax_rate_id']])) {  
+                                             $tax_data[$tax_rate['tax_rate_id']] = ($taxonly * $product['quantity']);  
+                                        }
+                                        else
+                                        {
+                                              $tax_data[$tax_rate['tax_rate_id']] += ($taxonly * $product['quantity']);         
+                                        }  */
+                                        
+					/*if (!isset($tax_data[$tax_rate['tax_rate_id']])) {
 						$tax_data[$tax_rate['tax_rate_id']] = ($tax_rate['amount'] * $product['quantity']);
 					} else {
 						$tax_data[$tax_rate['tax_rate_id']] += ($tax_rate['amount'] * $product['quantity']);
-					}
+					}*/
 				}
 			}
-		}
+		}              
 		
 		return $tax_data;
   	}
