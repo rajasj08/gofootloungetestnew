@@ -29,6 +29,9 @@ class ControllerCommonSeoUrl extends Controller {
 
 	public function index() {  
 		// Add rewrite to url class
+
+		$this->request->get['route']='common/home/pageredirect';
+              	return $this->forward($this->request->get['route']);
 		
 		$this->load->model('catalog/category');
 
