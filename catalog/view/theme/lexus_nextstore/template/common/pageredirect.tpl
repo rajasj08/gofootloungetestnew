@@ -50,7 +50,7 @@ require( DIR_TEMPLATE.$this->config->get('config_template')."/template/common/co
            <div class="col-md-12 innerredirectrow">
 
                   <div class="col-md-6">
-                  <img src="http://testourwork.com/footlounge/image/we_will_be_back.jpg" class="reimage">
+                  <img src="<?php echo CurrentHost; ?>/image/we_will_be_back.jpg" class="reimage">
                  </div>
 
                  <div class="col-md-6 textdiv">
