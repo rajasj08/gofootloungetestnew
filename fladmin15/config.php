@@ -25,10 +25,10 @@ define('DIR_CATALOG', $documentRoot. 'catalog/');
 define('CurrentHost','https://footlounge.in');
 
 define('DB_DRIVER', 'mysqliz');
-define('DB_HOSTNAME', 'aa5q2tt2zwzqj.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
+define('DB_HOSTNAME', 'aa8kg1npvdowa0.cvwrkeif9dtm.ap-south-1.rds.amazonaws.com');
 define('DB_USERNAME', 'fladmin');
 define('DB_PASSWORD', 'Welcome!23');
-define('DB_DATABASE', 'ebdb');
+define('DB_DATABASE', 'ebdb'); 
 define('DB_PORT', '3306'); 
 define('DB_PREFIX', 'oc_'); 
 /*define('DB_DRIVER', 'mysql');
